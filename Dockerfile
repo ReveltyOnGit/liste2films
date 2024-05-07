@@ -11,7 +11,7 @@ FROM node:lts-alpine
 ENV NODE_ENV production
 
 WORKDIR /usr/src/app
-
+COPY src/ .
 # Download dependencies as a separate step to take advantage of Docker's caching.
 RUN npm i
 
@@ -19,7 +19,6 @@ RUN npm i
 USER node
 
 # Copy the rest of the source files into the image.
-COPY src/ ./
 
 # Expose the port that the application listens on.
 EXPOSE 3005
