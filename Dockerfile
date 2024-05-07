@@ -13,7 +13,7 @@ ENV NODE_ENV production
 WORKDIR /usr/src/app
 
 # Download dependencies as a separate step to take advantage of Docker's caching.
-RUN npm ci --omit=dev
+RUN npm i
 
 # Run the application as a non-root user.
 USER node
