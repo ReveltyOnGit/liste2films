@@ -12,6 +12,7 @@ services:
   server:
     build:
       context: .
+      dockerfile: Dockerfile
     environment:
       NODE_ENV: production
     ports:
