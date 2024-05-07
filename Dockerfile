@@ -11,10 +11,10 @@ FROM node:lts-alpine
 ENV NODE_ENV production
 
 WORKDIR /usr/src/app
+USER root
 COPY src/ .
 # Download dependencies as a separate step to take advantage of Docker's caching.
 RUN npm i
-USER root
 
 # Expose the port that the application listens on.
 EXPOSE 3005
