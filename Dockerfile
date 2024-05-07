@@ -15,8 +15,6 @@ COPY src/ .
 # Download dependencies as a separate step to take advantage of Docker's caching.
 RUN npm i
 USER root
-RUN chown node:node /usr/src/app/src/movies.json && chmod 664 /usr/src/app/src/movies.json
-USER node
 
 # Expose the port that the application listens on.
 EXPOSE 3005
